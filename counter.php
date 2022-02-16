@@ -6,6 +6,7 @@ include_once './kletka.php';
 
 if(isset($_POST['submit']))
     {
+        $_SESSION['start'] = true;
 
         $count = $_POST['count']; // Кол. циклов
         $_SESSION['count'] = $count;

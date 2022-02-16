@@ -2,7 +2,7 @@
 
 include_once './counter.php';
 include_once "./timer.php";
-  
+$_SESSION['load'] = false;
 ?>
 
 
@@ -70,9 +70,13 @@ include_once "./timer.php";
 
             <tbody>
               <?php
-                    //Запускаем таймер каждую секунду
-                    timer1();
-                
+                    if($_SESSION['load'] || $_SESSION['start']){
+                      //Запускаем таймер 
+                      timer1();
+
+                    }
+                    
+                    $_SESSION['start'] = false;
               ?>
 
               
